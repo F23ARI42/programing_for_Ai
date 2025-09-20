@@ -1,0 +1,50 @@
+from  tkinter import *
+from tkinter import messagebox, ttk
+window = Tk()
+#task4
+window.geometry("500x500")
+window.title("student information database")
+Label(window, text="Student Information").grid(column=3, row=2)
+Label(window, text="Student Name").grid(column=4, row=3,padx=5, pady=5)
+name_entry = Entry(window)
+name_entry.grid(column=5, row=3,padx=5, pady=5)
+Label(window,text="Student ID").grid(column=4, row=4,padx=5, pady=5)
+id_entry = Entry(window)
+id_entry.grid(column=5, row=4,padx=5, pady=5)
+Label(window,text="Student Email").grid(column=4, row=5,padx=5, pady=5)
+email_entgry = Entry(window)
+email_entgry.grid(column=5, row=5,padx=5, pady=5)
+Label(window,text="Student Password").grid(column=4, row=6,padx=5, pady=5)
+password_entgry = Entry(window,show="*")
+password_entgry.grid(column=5, row=6,padx=5, pady=5)
+Label(window,text="Address").grid(column=4, row=7,padx=5, pady=5)
+address_entgry = Entry(window)
+address_entgry.grid(column=5, row=7,padx=5, pady=5)
+n=StringVar()
+combo=ttk.Combobox(window, width=20, textvariable=n,state="readonly")
+combo["values"]=('Male',
+                 'female',
+                 'other')
+combo.grid(column=5, row=8,padx=5, pady=5)
+def svae():
+    student_name=name_entry.get()
+    student_email=email_entgry.get()
+    student_id=id_entry.get()
+    student_password=password_entgry.get()
+    address=address_entgry.get()
+    gender=combo.get()
+    if student_name and student_email and student_password and address:
+        with open("data.txt", "a") as file:
+            file.write(f"{student_name},{student_id},{student_email},{student_password},{address},{gender}\n")
+            messagebox.showinfo("Success", "Student information database has been created")
+            name_entry.delete(0, END)
+            email_entgry.delete(0, END)
+            id_entry.delete(0, END)
+            address_entgry.delete(0, END)
+            password_entgry.delete(0, END)
+            combo.set('')
+    else:
+        messagebox.showerror("Error", "Please fill in all fields")
+button=Button(window, text="Submit", command=svae)
+button.grid(column=5, row=9,padx=5, pady=5)
+window.mainloop()

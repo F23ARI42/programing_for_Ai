@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome to Luxury Cars Showroom{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<div class="hero-section text-center py-5 bg-light mb-5">
+    <h1 class="display-4">Welcome to Luxury Cars Showroom</h1>
+    <p class="lead">Discover Your Dream Car Today</p>
+    <a href="/buy" class="btn btn-primary btn-lg">Browse Cars</a>
+</div>
+
+<!-- Featured Cars Section -->
+<section class="featured-cars mb-5">
+    <h2 class="text-center mb-4">Featured Cars</h2>
+    <div class="row">
+        <!-- Featured Car 1 -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/car1.jpg') }}" class="card-img-top" alt="Luxury Car 1">
+                <div class="card-body">
+                    <h5 class="card-title">Mercedes-Benz S-Class</h5>
+                    <p class="card-text">Starting from $95,000</p>
+                    <ul class="list-unstyled">
+                        <li>✓ 4.0L V8 Biturbo Engine</li>
+                        <li>✓ Premium Leather Interior</li>
+                        <li>✓ Advanced Driver Assistance</li>
+                    </ul>
+                    <a href="/buy" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Featured Car 2 -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/car2.jpg') }}" class="card-img-top" alt="Luxury Car 2">
+                <div class="card-body">
+                    <h5 class="card-title">BMW 7 Series</h5>
+                    <p class="card-text">Starting from $87,000</p>
+                    <ul class="list-unstyled">
+                        <li>✓ 3.0L Inline-6 Engine</li>
+                        <li>✓ Executive Lounge Seating</li>
+                        <li>✓ BMW iDrive 8.0</li>
+                    </ul>
+                    <a href="/buy" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Featured Car 3 -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/car3.jpg') }}" class="card-img-top" alt="Luxury Car 3">
+                <div class="card-body">
+                    <h5 class="card-title">Audi A8</h5>
+                    <p class="card-text">Starting from $89,000</p>
+                    <ul class="list-unstyled">
+                        <li>✓ Quattro All-Wheel Drive</li>
+                        <li>✓ Bang & Olufsen Sound</li>
+                        <li>✓ Matrix LED Headlights</li>
+                    </ul>
+                    <a href="/buy" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Us Section -->
+<section class="why-choose-us bg-light py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Why Choose Us</h2>
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <div class="feature-box">
+                    <i class="fas fa-car fa-3x mb-3"></i>
+                    <h4>Premium Selection</h4>
+                    <p>Handpicked luxury vehicles from top manufacturers</p>
+                </div>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="feature-box">
+                    <i class="fas fa-shield-alt fa-3x mb-3"></i>
+                    <h4>Quality Guaranteed</h4>
+                    <p>All vehicles undergo rigorous quality checks</p>
+                </div>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="feature-box">
+                    <i class="fas fa-headset fa-3x mb-3"></i>
+                    <h4>Expert Support</h4>
+                    <p>24/7 customer service and maintenance support</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %} 

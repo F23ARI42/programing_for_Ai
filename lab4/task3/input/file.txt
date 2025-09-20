@@ -1,0 +1,3 @@
+[] call mom
+[] grocery
+[x] buy cigars
